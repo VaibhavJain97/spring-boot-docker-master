@@ -16,7 +16,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
     - name: Build Docker image
-      run: docker build -t VaibhavJain97/spring-boot-docker-master:latest .
+      run: docker build -t spring-boot-docker-master:latest .
     - name: Run Docker Image
       run: docker run -d -p 8000:8000 --name VaibhavJain97/spring-boot-docker-master
     - name: Publish Docker image
