@@ -13,9 +13,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
     - name: Build Docker image
-      run: docker build -t spring-boot-docker-master:latest .
+      run: |
+       docker build -t spring-boot-docker-master:latest .
+       docker images
     - name: Run Docker Image
-      run: docker run -d -p 8080:8080 --name spring-boot-docker-master spring-boot-docker-master:latest
+      run: |
+       docker run -d -p 8080:8080 --name spring-boot-docker-master spring-boot-docker-master:latest
+       docker ps
     - name: Login to Docker-Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} 
              -p ${{ secrets.DOCKER_PASSWORD }}
