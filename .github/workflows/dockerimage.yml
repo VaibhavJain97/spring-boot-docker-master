@@ -12,8 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Publish to Registry
-      uses: jainvaibhav02/testing-docker-github@main
+      uses: VaibhavJain97/spring-boot-docker-master@main
       with:
-        name: vaibhav-jain/spring-boot-docker
+        name: jainvaibhav02/testing-docker-github
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
