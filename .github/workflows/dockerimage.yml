@@ -15,8 +15,8 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} 
              -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build Docker image
-      run: docker build -t $REPO:latest .
+      run: docker build -t VaibhavJain97/spring-boot-docker-master:latest .
     - name: Run Docker Image
-      run: docker run -d -p 8000:8000 --name $REPO
+      run: docker run -d -p 8000:8000 --name VaibhavJain97/spring-boot-docker-master
     - name: Publish Docker image
-      run: docker push jainvaibhav02/$REPO:latest
+      run: docker push jainvaibhav02/testing-docker-github:VaibhavJain97/spring-boot-docker-master
