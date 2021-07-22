@@ -20,9 +20,7 @@ jobs:
        docker ps
     - name: Publish Docker image
       run: |
-       docker logout https://hub.docker.com/repository/docker/jainvaibhav02/testing-docker-github
-       docker login https://hub.docker.com/repository/docker/jainvaibhav02/testing-docker-github -u ${{ secrets.DOCKER_USERNAME }} 
-             -p ${{ secrets.DOCKER_PASSWORD }}
+       docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} jainvaibhav02/testing-docker-github
        docker tag firstimage spring-boot-docker-master:latest
-       docker push spring-boot-docker-master:latest
+       docker push jainvaibhav02/testing-docker-github:firstimage
        
