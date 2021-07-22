@@ -18,6 +18,6 @@ jobs:
     - name: Build Docker image
       run: docker build -t spring-boot-docker-master:latest .
     - name: Run Docker Image
-      run: docker run -d -p 8000:8000 --name VaibhavJain97/spring-boot-docker-master
+      run: docker run -d -p 8000:8000 --name spring-boot-docker-master spring-boot-docker-master:latest
     - name: Publish Docker image
-      run: docker push jainvaibhav02/testing-docker-github:VaibhavJain97/spring-boot-docker-master
+      run: docker push jainvaibhav02/testing-docker-github:spring-boot-docker-master
