@@ -10,14 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Login to Docker-Hub
-      run: docker login -u ${{ secrets.DOCKER_USERNAME }} 
-             -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Checkout
       uses: actions/checkout@main
     - name: Build Docker image
       run: docker build -t spring-boot-docker-master:latest .
     - name: Run Docker Image
       run: docker run -d -p 8080:8080 --name spring-boot-docker-master spring-boot-docker-master:latest
+    - name: Login to Docker-Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} 
+             -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Publish Docker image
-      run: docker push spring-boot-docker-master:latest
+      run: docker push spring-boot-docker-master
