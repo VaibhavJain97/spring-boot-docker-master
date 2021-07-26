@@ -20,11 +20,10 @@ jobs:
       uses: actions/checkout@main
       
     - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
       with:
-       version: '290.0.1'
-       project_id: ${{ secrets.GKE_PROJECT }}
        service_account_key: ${{ secrets.GCP_SA_KEY }}
+       project_id: ${{ secrets.GKE_PROJECT }}
        
        run: |-
         gcloud --quiet auth configure-docker
