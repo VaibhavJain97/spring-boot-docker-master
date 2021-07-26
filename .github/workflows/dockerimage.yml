@@ -5,22 +5,44 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: cluster-1    # TODO: update to cluster name
+  GKE_ZONE: us-central1-c   # TODO: update to cluster zone
+  DEPLOYMENT_NAME: gke-first # TODO: update to deployment name
+  IMAGE: hello-world-gke
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@main
+      
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@master
+      with:
+       project_id: ${{ secrets.GKE_PROJECT }}
+       service_account_key: ${{ secrets.GCP_SA_KEY }}
+       export_default_credentials: true
+       
+       run: | 
+        gcloud --quiet auth configure-docker
+        
+    - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
+      with:
+        cluster_name: ${{ env.GKE_CLUSTER }}
+        location: ${{ env.GKE_ZONE }}
+        credentials: ${{ secrets.GKE_SA_KEY }}
+
+
     - name: Build Docker image
-      run: docker build -t spring-boot-docker-master:latest .
-    - name: Run Docker Image
-      run: |
-       docker run -d -p 8080:8080 --name spring-boot-docker-master spring-boot-docker-master:latest
-       docker ps
-    - name: Publish Docker image
-      run: |
-       docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} jainvaibhav02/testing-docker-github
-       docker tag firstimage spring-boot-docker-master:latest
-       docker push jainvaibhav02/testing-docker-github:firstimage
+      run: |-
+        docker build \
+          --tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+          --build-arg GITHUB_SHA="$GITHUB_SHA" \
+          --build-arg GITHUB_REF="$GITHUB_REF" \
+    - name: Publish
+      run: |-
+        docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
        
