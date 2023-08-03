@@ -1,6 +1,6 @@
 module.exports = {
   branches: [
-    {name: "testing-commits" }
+    { name: "testing-commits" }
      ], // Change this to the name of your default branch
   plugins: [
     "@semantic-release/commit-analyzer",
