@@ -1,5 +1,5 @@
 module.exports = {
-  branches: ["origin/main"], // Change this to the name of your default branch
+  branches: ["origin/release/release"], // Change this to the name of your default branch
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
