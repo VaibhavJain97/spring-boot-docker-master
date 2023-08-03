@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/VaibhavJain97/spring-boot-docker-master/compare/v1.1.0...v1.1.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* Fix the validation of aws type ([79fad33](https://github.com/VaibhavJain97/spring-boot-docker-master/commit/79fad334a8019debfaa0fbe3220f9e98038a6203))
+
 # [1.1.0](https://github.com/VaibhavJain97/spring-boot-docker-master/compare/v1.0.0...v1.1.0) (2023-08-03)
 
 
