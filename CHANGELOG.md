@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/VaibhavJain97/spring-boot-docker-master/compare/v1.0.0...v1.1.0) (2023-08-03)
+
+
+### Features
+
+* adding an extra feature in the codebase so that it will not work ([d35ce00](https://github.com/VaibhavJain97/spring-boot-docker-master/commit/d35ce00e11710214e36a4ae087eb47ce9a4199d1))
+
 # 1.0.0 (2023-08-03)
 
 
