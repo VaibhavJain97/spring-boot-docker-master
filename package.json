@@ -1,0 +1,17 @@
+{
+  "name": "spring-boot-docker-master",
+  "version": "1.0.0",
+  "description": "Getting Started with Docker using Spring Boot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^10.0.4"
+  }
+}
