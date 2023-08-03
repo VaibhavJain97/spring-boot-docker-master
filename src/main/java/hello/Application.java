@@ -17,5 +17,10 @@ public class Application {
 		return "Hello from spring-boot-docker";
 	}
 
+	@RequestMapping("/add")
+	public String home(){
+		return "Hello from spring-boot-docker-adding-extra";
+	}
+
 
 }
