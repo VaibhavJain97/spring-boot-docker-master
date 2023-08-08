@@ -16,12 +16,6 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^10.0.4",
     "commitlint": "^17.6.7",
-    "conventional-changelog-conventionalcommits": "^6.1.0",
-    "husky": "^8.0.3"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "conventional-changelog-conventionalcommits": "^6.1.0"
   }
 }
