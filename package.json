@@ -17,12 +17,10 @@
     "@semantic-release/npm": "^10.0.4",
     "commitlint": "^17.6.7",
     "conventional-changelog-conventionalcommits": "^6.1.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3"
+    "husky": "^8.0.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
