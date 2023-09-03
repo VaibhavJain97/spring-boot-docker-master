@@ -4,7 +4,6 @@
   "description": "Getting Started with Docker using Spring Boot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install && husky add .husky/commit-msg \"npx --no -- commitlint --edit $1\""
   },
   "keywords": [],
